@@ -20,35 +20,42 @@ $(function(){
 });//end all
 
 function main (){
-  console.log("main is called");
+ //console.log("main is called");
+//created variable to represent end of the students array
+  var end = classJson.students.length;
 
+  //functions are called to display students and numbers on the dom
+  showStudent(studentPos);
+  showNumber(studentPos);
 
 
        //next button
        $('#next').click(function(){
          studentPos++;
          console.log(studentPos);
-         if(studentPos == 20){
+         if(studentPos == end){
              studentPos = 0;
            }
         showStudent(studentPos);
         showNumber(studentPos);
 
 
-       }); //next
+      }); //end next
+
        //prev button
        $('#prev').click(function(){
           studentPos--;
           console.log(studentPos);
-          if(studentPos == -1){
-              studentPos = 19;
+          if(studentPos == 0){
+              studentPos = end;
             }
+
           showStudent(studentPos);
           showNumber(studentPos);
          });  //end prev
 
-
-      function showStudent (i){
+         // function for displaying student
+      function showStudent(i){
         var firstName = classJson.students[i].first_name;
         var lastName = classJson.students[i].last_name;
         var city = classJson.students[i].city;
@@ -56,10 +63,11 @@ function main (){
         var studentInfo =  "Name: "+ firstName + " " + lastName + " City: " + city + " Shoutout: " + shoutout;
           console.log("showStudent is called");
           $('p').text(studentInfo);
+        } //end showStudent
 
-
- } //end showStudent
-  function showNumber (i){
-     $('#numDis').text("# " + i  + " of 20");
-  }
+     //function for displaying number
+      function showNumber (j){
+        var length = classJson.students.length;
+         $('#numDis').text("# " + (j+1)  + " of " + length);
+      } //end showNumber
 } // end main
