@@ -21,7 +21,7 @@ $(function(){
 
 function main (){
   console.log("main is called");
-       showNumber(studentPos);
+
 
 
        //next button
@@ -32,6 +32,7 @@ function main (){
              studentPos = 0;
            }
         showStudent(studentPos);
+        showNumber(studentPos);
 
 
        }); //next
@@ -43,6 +44,7 @@ function main (){
               studentPos = 20;
             }
           showStudent(studentPos);
+          showNumber(studentPos);
          });  //end prev
 
 
@@ -52,11 +54,13 @@ function main (){
         var city = classJson.students[number].city;
         var shoutout = classJson.students[number].shoutout;
         var studentInfo =  "Name: "+ firstName + " " + lastName + " City: " + city + " Shoutout: " + shoutout;
+        var studentPosition = "# " + number  + " of 20";
           console.log("showStudent is called");
-          $('p').text(studentInfo).fadeIn(3000);
+          $('p').text(studentInfo);
+
 
  } //end showStudent
   function showNumber (number){
-     $('#infoDisplay').append('<p>'+"# " + number  + " of 20"+'</p>');
+     $('#numDis').text("# " + number  + " of 20");
   }
 } // end main

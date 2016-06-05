@@ -2,11 +2,11 @@ h1{
   text-align: center;
   font-size: 30px;
 }
-#infoDisplay{
+#numDis{
   text-align: center;
 }
-#start{
-  margin: 0 auto;
+#infoDisplay{
+  text-align: center;
 }
 #prev{
   float : left;
