@@ -28,7 +28,7 @@ function main (){
        $('#next').click(function(){
          studentPos++;
          console.log(studentPos);
-         if(studentPos == 21){
+         if(studentPos == 20){
              studentPos = 0;
            }
         showStudent(studentPos);
@@ -41,26 +41,25 @@ function main (){
           studentPos--;
           console.log(studentPos);
           if(studentPos == -1){
-              studentPos = 20;
+              studentPos = 19;
             }
           showStudent(studentPos);
           showNumber(studentPos);
          });  //end prev
 
 
-      function showStudent (number){
-        var firstName = classJson.students[number].first_name;
-        var lastName = classJson.students[number].last_name;
-        var city = classJson.students[number].city;
-        var shoutout = classJson.students[number].shoutout;
+      function showStudent (i){
+        var firstName = classJson.students[i].first_name;
+        var lastName = classJson.students[i].last_name;
+        var city = classJson.students[i].city;
+        var shoutout = classJson.students[i].shoutout;
         var studentInfo =  "Name: "+ firstName + " " + lastName + " City: " + city + " Shoutout: " + shoutout;
-        var studentPosition = "# " + number  + " of 20";
           console.log("showStudent is called");
           $('p').text(studentInfo);
 
 
  } //end showStudent
-  function showNumber (number){
-     $('#numDis').text("# " + number  + " of 20");
+  function showNumber (i){
+     $('#numDis').text("# " + i  + " of 20");
   }
 } // end main
